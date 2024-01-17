@@ -20,7 +20,7 @@ AIRFLOW_UID=50000
 On all operating systems, you need to run database migrations and create the first user account. To do this, run.
 
 ```
-$ docker compose up airflow-init
+docker compose up airflow-init
 ```
 After initialization is complete, you should see a message like this:
 
@@ -41,7 +41,7 @@ docker compose up
 
 In a second terminal you can check the condition of the containers and make sure that no containers are in an unhealthy condition.
 ```
-$ docker ps
+docker ps
 CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS                    PORTS                              NAMES
 247ebe6cf87a   apache/airflow:2.8.0   "/usr/bin/dumb-init …"   3 minutes ago    Up 3 minutes (healthy)    8080/tcp                           compose_airflow-worker_1
 ed9b09fc84b1   apache/airflow:2.8.0   "/usr/bin/dumb-init …"   3 minutes ago    Up 3 minutes (healthy)    8080/tcp                           compose_airflow-scheduler_1
