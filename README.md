@@ -4,8 +4,15 @@
 
 On Linux, the quick-start needs to know your host user id and needs to have group id set to 0. Otherwise the files created in dags, logs and plugins will be created with root user ownership. You have to make sure to configure them for the docker-compose.
 
-```
+```bash
+mkdir -p ./dags ./logs ./plugins ./config
 echo -e "AIRFLOW_UID=$(id -u)" > .env
+```
+
+For other operating systems, you may get a warning that AIRFLOW_UID is not set, but you can safely ignore it. You can also manually create an .env file in the same folder as docker-compose.yaml with this content to get rid of the warning:
+
+```
+AIRFLOW_UID=50000
 ```
 
 ## Initialize the database
@@ -23,6 +30,8 @@ airflow-init_1       | Admin user airflow created
 airflow-init_1       | 2.8.0
 start_airflow-init_1 exited with code 0
 ```
+
+The account created has the login airflow and the password airflow.
 
 ## Running Airflow
 
