@@ -4,7 +4,7 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 
 default_args = {
-    'owner': 'coder2j',
+    'owner': 'jrw',
     'retries': 5,
     'retry_delay': timedelta(minutes=2)
 }
